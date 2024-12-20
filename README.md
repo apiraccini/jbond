@@ -8,7 +8,7 @@ Simple agent framework.
 - [ ] core: find agentic framework. Candidates: [autogen](https://github.com/microsoft/autogen), [pydanticai](https://github.com/pydantic/pydantic-ai), custom-made solution
 - [x] rag: find document parser. Solution: [docling](https://github.com/DS4SD/docling)
 - [ ] rag: find vector db. Candidates: [chromadb](https://github.com/chroma-core/chroma), [qdrant](https://github.com/qdrant/qdrant), others
-- [ ] tools: Develop GoogleSearchTool, CodeExecutionTool
+- [ ] tools: develop GoogleSearchTool, CodeExecutionTool
 
 ## Development
 
