@@ -9,3 +9,14 @@ Simple agent framework.
 - [x] rag: find document parser. Solution: [docling](https://github.com/DS4SD/docling)
 - [ ] rag: find vector db. Candidates: [chromadb](https://github.com/chroma-core/chroma), [qdrant](https://github.com/qdrant/qdrant), others
 - [ ] tools: Develop GoogleSearchTool, CodeExecutionTool
+
+## Development
+
+### Package management with uv
+
+```uv``` is used for dependency management. Look [here](https://github.com/astral-sh/uv?tab=readme-ov-file) for installation instructions. Here are the basic commands:
+
+```bash
+uv sync # Update virtual environment with latest dependencies
+uv add package_name # Add a new dependency
+```
