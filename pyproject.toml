@@ -1,0 +1,9 @@
+[project]
+name = "jbond"
+version = "0.1.0"
+description = "Simple agent framework."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "docling>=2.14.0",
+]
