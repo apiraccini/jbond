@@ -14,9 +14,9 @@ Simple agent framework.
 
 ### Package management with uv
 
-```uv``` is used for dependency management. Look [here](https://github.com/astral-sh/uv?tab=readme-ov-file) for installation instructions. Here are the basic commands:
+We use ```uv``` for dependency management. Look [here](https://github.com/astral-sh/uv?tab=readme-ov-file) for installation instructions. Here are the basic commands:
 
 ```bash
 uv sync # Update virtual environment with latest dependencies
-uv add package_name # Add a new dependency
+uv add <package_name> # Add a new dependency
 ```
