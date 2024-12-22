@@ -40,10 +40,8 @@ def main():
     query = "What is the somatosensory system?"
     results = db_client.query(collection_name=COLLECTION_NAME, query_text=query, limit=3)
 
-    print(f"Structure of retrieved documents: {dir(results[0])}")
-    print("Retrieved documents:")
-    for result in results:
-        print(result.document)
+    print(f"First result: \n{results[0].document}")
+    print(f"First result metadata: \n{results[0].metadata}")
 
 if __name__ == "__main__":
     main()
