@@ -5,6 +5,7 @@ description = "Simple agent framework."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "black>=24.10.0",
     "docling>=2.14.0",
     "fastembed>=0.4.2",
     "ibm-watsonx-ai>=1.1.26",

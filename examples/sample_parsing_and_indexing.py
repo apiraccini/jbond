@@ -7,9 +7,10 @@ PROJECT_ROOT = Path(__file__).parent.parent
 INPUT_FILES_FOLDER = PROJECT_ROOT / "data"
 
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-SPARSE_MODEL = "Qdrant/bm25" # or "prithivida/Splade_PP_en_v1"
+SPARSE_MODEL = "Qdrant/bm25"  # or "prithivida/Splade_PP_en_v1"
 CHUNK_MAX_TOKENS = 512
 COLLECTION_NAME = "test_collection"
+
 
 def main():
 
@@ -25,23 +26,30 @@ def main():
         chunks.extend(doc_chunks)
 
     # Index chunks
-    db_client = QdrantClient(":memory:") # or QdrantClient(path=PROJECT_ROOT / "index.db")
+    db_client = QdrantClient(
+        ":memory:"
+    )  # or QdrantClient(path=PROJECT_ROOT / "index.db")
     db_client.set_model(EMBEDDING_MODEL)
-    db_client.set_sparse_model(SPARSE_MODEL) # comment to use only dense vector search
+    db_client.set_sparse_model(SPARSE_MODEL)  # comment to use only dense vector search
 
     documents, metadata = [], []
     for chunk in chunks:
         documents.append(chunk.text)
         metadata.append(chunk.meta.export_json_dict())
-    
-    db_client.add(collection_name=COLLECTION_NAME, documents=documents, metadata=metadata)
+
+    db_client.add(
+        collection_name=COLLECTION_NAME, documents=documents, metadata=metadata
+    )
 
     # Sample query
     query = "What is the somatosensory system?"
-    results = db_client.query(collection_name=COLLECTION_NAME, query_text=query, limit=3)
+    results = db_client.query(
+        collection_name=COLLECTION_NAME, query_text=query, limit=3
+    )
 
     print(f"First result: \n{results[0].document}")
     print(f"First result metadata: \n{results[0].metadata}")
+
 
 if __name__ == "__main__":
     main()
